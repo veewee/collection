@@ -1,0 +1,50 @@
+{
+    "name": "loophp/collection",
+    "type": "library",
+    "description": "A (memory) friendly, easy, lazy and modular collection class.",
+    "keywords": [
+        "collection",
+        "generator",
+        "iterator",
+        "yield"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pol Dellaiera",
+            "email": "pol.dellaiera@protonmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.2.5"
+    },
+    "require-dev": {
+        "drupol/php-conventions": "^1.7.1",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "infection/infection": ">= 0.15.3",
+        "phpbench/phpbench": "^0.17.1",
+        "phpspec/phpspec": "^6.2",
+        "phpstan/phpstan": "^0.12.31",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "vimeo/psalm": "^3.12"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "loophp\\collection\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "loophp\\collection\\benchmarks\\": "./benchmarks/"
+        }
+    },
+    "scripts": {
+        "bench": "vendor/bin/phpbench run --report='generator: \"table\", cols: [ \"suite\", \"subject\", \"mean\", \"diff\", \"mem_peak\", \"mem_real\"], break: [\"benchmark\"]'",
+        "grumphp": "vendor/bin/grumphp run",
+        "infection": "vendor/bin/infection run -j 2",
+        "phpspec": "vendor/bin/phpspec run"
+    }
+}
